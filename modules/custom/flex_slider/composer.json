@@ -1,0 +1,10 @@
+{
+  "name": "drupal/flex_slider",
+  "repositories": [{
+    "type": "git",
+    "url": "https://github.com/woothemes/FlexSlider.git"
+  }],
+  "require": {
+    "woothemes/FlexSlider": "2.6.0"
+  }
+}

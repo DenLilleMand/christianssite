@@ -1,0 +1,11 @@
+flex-slider:
+  version: 1.x
+  css:
+    theme:
+      css/flex_slider.css: {}
+      css/flexslider.css: {}
+  js:
+    js/flex_slider.js: {}
+    js/jquery.flexslider-min.js: {}
+  dependencies:
+    - core/jquery

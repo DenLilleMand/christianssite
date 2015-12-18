@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * @file
+ * A Drupal 8 flex slider
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_permission()
+ */
+function flex_slider_permission() {
+    $permissions = array(
+        'view flex slider' => array(
+            'title' => t('View flex slider module'),
+            'description' => t('Permissions to view the flex slider block'),
+        )
+    );
+    return $permissions;
+}
+
+function flex_slider_template_preprocess_user(&$variables) {
+    $variables['user'] = $variables['elements']['#user'];
+    $variables['content'] = FALSE;
+}
+
+/**
+ * Implements hook_theme()
+ *
+ *
+ */
+function flex_slider_theme() {
+    return array(
+        'flex_slider_primary_page' => array(
+            'theme' => 'flex_slider_primary_page',
+            'variables' => array(
+                'items' => array(),
+            ),
+        ),
+    );
+}
+
+
+/**
+ * drupal used to use php as template files, and sometimes peopel would mix logic into them, even database calls.
+ * But we use Twig to divide this logic, so the place we would do database calls etc.
+ * would be put into the template_preprocess hook(this method). And then it would pass the finished variables on to the twig template.
+ * @param $variables
+ */
+function template_preprocess_flex_slider_primary_page(&$variables) {
+    global $base_root, $base_path;
+    $image1 = 'imageone.jpg';
+    $image2 = 'imagetwo.jpg';
+    $image3 = 'imagethree.jpg';
+
+    $variables['image1'] = $base_root . $base_path . drupal_get_path('module', 'flex_slider') . '/images/' . $image1;
+    $variables['image2'] = $base_root . $base_path . drupal_get_path('module', 'flex_slider') . '/images/' . $image2;
+    $variables['image3'] = $base_root . $base_path . drupal_get_path('module', 'flex_slider') . '/images/' . $image3;
+}
+

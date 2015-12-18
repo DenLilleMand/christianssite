@@ -1,0 +1,33 @@
+.myDiv {
+    position: relative;
+    z-index: 1;
+}
+
+.myDiv .bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #CD4336;
+    opacity: .2;
+    width: 100%;
+    height: 100%;
+}
+
+.block-title {
+    font-size: large;
+    color: red;
+}
+
+img {
+    max-width:100%;
+    height: auto;
+    max-height:300px;
+}
+
+.flexslider {
+    min-height:300px;
+    max-height:300px;
+}

@@ -1,0 +1,7 @@
+hello_world_settings:
+  path: '/flexslider'
+  defaults:
+    _controller: '\Drupal\flex_slider\Controller\FlexSliderController::create'
+    _title: 'Flex slider'
+  requirements:
+    _permission: 'access content'

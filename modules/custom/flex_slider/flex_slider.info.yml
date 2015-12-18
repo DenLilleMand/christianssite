@@ -1,0 +1,6 @@
+name: Flex Slider
+type: module
+description: 'A Drupal 8 flex slider'
+package: Custom Modules
+version: 1.0
+core: 8.x

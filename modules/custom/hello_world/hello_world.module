@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * A basic Drupal 8 hello world module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_permission()
+ */
+function hello_world_permission() {
+    $permissions = array(
+        'view hello world' => array(
+            'title' => t('View Hello World module'),
+            'description' => t('View the hello world module page.'),
+        )
+    );
+    return $permissions;
+}
+
+
+/**
+ * Implements hook_theme()
+ *
+ * The method logic inside of our hello_world.theme.inc->theme_hello_world_primary_page()
+ * method could easily be put directly inside of this hook implementation.
+ * The "clever" reason for this is that this file is regularly scanned for hook implementations,
+ * so the longer it is, the worse the site will perform. The "less clever" reason is that this is
+ * supposedly less cluttered hence prettier code.
+ */
+function hello_world_theme() {
+    return array(
+        'hello_world_primary_page' => array(
+            'theme' => 'hello_world_primary_page',
+            'variables' => array(
+                'items' => array(),
+            ),
+        ),
+    );
+}
+
+
+/**
+ * drupal used to use php as template files, and sometimes peopel would mix logic into them, even database calls.
+ * But we use Twig to divide this logic, so the place we would do database calls etc.
+ * would be put into the template_preprocess hook(this method). And then it would pass the finished variables on to the twig template.
+ * @param $variables
+ */
+function template_preprocess_hello_world_primary_page(&$variables) {
+    $variables['randomValue'] = 'herpderp random value';
+}
+
