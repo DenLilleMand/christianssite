@@ -20,11 +20,6 @@ function flex_slider_permission() {
     return $permissions;
 }
 
-function flex_slider_template_preprocess_user(&$variables) {
-    $variables['user'] = $variables['elements']['#user'];
-    $variables['content'] = FALSE;
-}
-
 /**
  * Implements hook_theme()
  *

@@ -8,7 +8,7 @@
 
 /**
  * @file
- * Contains \Drupal\hello_world\Plugin\Block\FlexSliderBlock
+ * Contains \Drupal\flex_slider\Plugin\Block\FlexSliderBlock
  */
 
 namespace Drupal\flex_slider\Plugin\Block;

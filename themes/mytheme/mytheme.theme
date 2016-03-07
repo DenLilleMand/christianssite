@@ -126,12 +126,12 @@ function mytheme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_s
  * @param $variables
  * @return string|static
  */
-function mytheme_username($variables) {
+/**function mytheme_username($variables) {
     if(isset($variables['link_path'])) {
         $output = '<a' . new Attribute(array('href' => $variables['link_path'])) . '>' . $variables['name'] . ' is awesome</a>';
     } else {
         $output = '<span' . new Attribute($variables['attributes']) . '>' . $variables['name'] . $variables['extra'] . '</span>';
     }
     return $output;
-}
+}*/
 

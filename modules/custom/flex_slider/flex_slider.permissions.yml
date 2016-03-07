@@ -1,4 +1,4 @@
-view hello world:
-  title: 'View hello world'
-  description: 'Allow access to view the hello world page. '
+view flex slider:
+  title: 'View flex slider'
+  description: 'Allow access to view the flex slider. '
   restrict access: TRUE
